@@ -1,0 +1,80 @@
+@use "sass:math";
+
+// Color system
+$primary:               #3F5D45;
+$secondary:             #EAF0ED;
+$info:                  #FFE180;
+$light:                 #8DA291;
+$white:                 #ffffff;
+
+// scss-docs-start theme-color-variables
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "info":       $info,
+  "light":      $light,
+  "white":      $white,
+);
+
+// Spacing
+$spacers: (
+  "xs":   .375rem, // 6
+  "m":   .8125rem, // 13
+  "l":   .9375rem, // 15
+  "xl":  4.375rem, // 70
+  "xxl": 5rem,     // 80
+  "0":   0,
+  "1":   .25rem,   // 4
+  "2":   .5rem,    // 8
+  "3":   .75rem,   // 12
+  "4":   1rem,     // 16
+  "5":   1.25rem,  // 20
+  "6":   1.5rem,   // 24
+  "7":   1.75rem,  // 28
+  "8":   1.875rem, // 30
+  "9":   2.25rem,  // 36
+  "10":  2.5rem,   // 40
+  "11":  3rem,     // 48
+  "12":  3.5rem,   // 56
+  "13":  3.75rem,  // 60
+);
+
+// Typography
+$font-sizes: (
+  "1":   1rem,      // 16
+  "2":   1.25rem,   // 20
+  "3":   1.5rem,    // 24
+);
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+// Container
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+);
+
+// // Navbar work through header
+$navbar-brand-padding-y:            0;
+$navbar-padding-y:                  1.5rem;
+$navbar-nav-link-padding-x:         1.875rem;
+$nav-link-padding-y:                1rem;
+
+$navbar-toggler-padding-y:          .375rem;
+$navbar-toggler-padding-x:          .5rem;
+$navbar-brand-margin-end:           0;
+
+$navbar-light-color:                $primary;
+$navbar-light-hover-color:          rgba($primary, .8);
+$navbar-light-active-color:         rgba($primary, .8);
+
+$nav-link-font-weight:              600;  // Semibold

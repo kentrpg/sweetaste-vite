@@ -1,0 +1,50 @@
+ol, ul {
+	list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  display: block;
+}
+
+// section block title style
+h2 {
+  // color: $brown;
+  font-weight: 700;
+}
+
+// form
+textarea {
+  resize: none;
+}
+
+// overrides _reboot.scss
+
+ol,
+ul {
+  padding-left: 0;
+}
+
+ol,
+ul,
+dl {
+  margin-bottom: 0;
+}
+
+address {
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
