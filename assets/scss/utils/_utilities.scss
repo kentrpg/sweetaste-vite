@@ -1,0 +1,11 @@
+$utilities: (
+  "font-family": (
+    property: font-family,
+    class: font,
+    values: (
+      monospace: var(--#{$prefix}font-monospace),
+      times: $font-family-times,
+      helvetica: $font-family-helvetica,
+    )
+  ),
+);

@@ -46,6 +46,10 @@ $font-sizes: (
   "3":   1.5rem,    // 24
 );
 
+$line-height-sm:    1.417;  // 為了讓 16px 文字高度為 22px
+
+$font-family-times:                Times, "Times New Roman", sans-serif;
+$font-family-helvetica:            "Helvetica Neue", sans-serif;
 // Grid breakpoints
 $grid-breakpoints: (
   xs: 0,
@@ -63,7 +67,7 @@ $container-max-widths: (
   xl: 1140px,
 );
 
-// // Navbar work through header
+// Navbar
 $navbar-brand-padding-y:            0;
 $navbar-padding-y:                  1.5rem;
 $navbar-nav-link-padding-x:         1.875rem;
@@ -78,3 +82,20 @@ $navbar-light-hover-color:          rgba($primary, .8);
 $navbar-light-active-color:         rgba($primary, .8);
 
 $nav-link-font-weight:              600;  // Semibold
+
+// Button
+$btn-border-radius:                 0;
+$btn-padding-y:                     1rem;
+$btn-padding-x:                     1.25rem;
+
+// Forms
+$input-bg:                          transparent;
+$input-border-radius:               0;
+$input-border-width:                0;
+$input-group-addon-bg:              $secondary;
+$input-group-addon-color:           $primary;
+$input-group-addon-padding-y:       1rem;
+$input-group-addon-padding-x:       1.25rem;
+
+// Options
+$enable-rfs:                        false;

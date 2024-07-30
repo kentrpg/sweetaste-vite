@@ -7,7 +7,7 @@ a {
   text-decoration: none;
 }
 
-img {
+img:not([width]) {
   vertical-align: middle;
   max-width: 100%;
   height: auto;
