@@ -5,7 +5,7 @@
 $utilities: map-merge(
   $utilities,
   (
-    // Modify values
+    // Modify utilities values
     "width": map-merge(
       map-get($utilities, "width"),
       (
@@ -131,6 +131,14 @@ $utilities: map-merge(
       property: grid-template-rows,
       class: gt-row,
       values: (auto: auto 1fr)
+    ),
+    // Modify CSS custom properties
+    "list-group": (
+      property: --#{$prefix}list-group-border-width,
+      class: list-group,
+      values: (
+        "flush": 0,
+      )
     ),
   )
 );
