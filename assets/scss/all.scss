@@ -17,12 +17,12 @@
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/root";
+@import "bootstrap/scss/utilities";
 
 // Include any default utilities overrides here
 @import "utils/utilities";
 
 // 6. Optionally include any other parts as needed
-@import "bootstrap/scss/utilities";
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/images";

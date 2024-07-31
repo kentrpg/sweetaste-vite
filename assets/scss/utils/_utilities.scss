@@ -11,7 +11,7 @@ $utilities: map-merge(
       (
         values: map-merge(
           map-get(map-get($utilities, "width"), "values"),
-          (33: 33.3333333333% )  
+          (input-num: 48px),  
         ),
       ),
     ),
@@ -21,7 +21,10 @@ $utilities: map-merge(
         responsive: true,
         values: map-merge(
           map-get(map-get($utilities, "max-width"), "values"),
-          (none: none),
+          (
+            none: none,
+            shop-car: 110px,
+          ),
         ),
       ),
     ),
@@ -35,6 +38,15 @@ $utilities: map-merge(
             helvetica: $font-family-helvetica,
             pingfang: $font-family-PingFang,
           ),
+        ),
+      ),
+    ),
+    "flex": map-merge(
+      map-get($utilities, "flex"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "flex"), "values"),
+          (none: none),
         ),
       ),
     ),
@@ -56,6 +68,31 @@ $utilities: map-merge(
       ( responsive: true ),
     ),
     // Add new utilities
+    "border-x": (
+      property: border-left border-right,
+      class: border,
+      values: (
+        x: 1px solid $border-color,
+      )
+    ),
+    "border-y": (
+      responsive: true,
+      property: border-top border-bottom,
+      class: border,
+      values: (
+        y: 1px solid $border-color,
+        0: 0,
+      )
+    ),
+    "flex-basis": (
+      responsive: true,
+      property: flex-basis,
+      class: flex-basis,
+      values: (
+        100: 100%,
+        auto: auto,
+      )
+    ),
     "grid-row": (
       responsive: true,
       property: grid-row,

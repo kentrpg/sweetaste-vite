@@ -17,9 +17,20 @@ picture {
   display: block;
 }
 
-// form
-textarea {
-  resize: none;
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  line-height: 1.417;
+  color: $light;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  color: $primary;
 }
 
 // overrides _reboot.scss
