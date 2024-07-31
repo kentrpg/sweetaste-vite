@@ -2,92 +2,98 @@
   @return #{"#{$start} / #{$end}"};
 }
 
-$utilities: (
-  "width": (
-    responsive: true,
-    property: width,
-    class: w,
-    values: (
-      25: 25%,
-      50: 50%,
-      33: 33.3333333333%,  // col-4
-      83: 83.33333333%,     // col-10
-      75: 75%,
-      100: 100%,
-      auto: auto
-  )),
-  "max-width": (
-    responsive: true,
-    property: max-width,
-    class: mw,
-    values: (
-      none: none,
-      100: 100%
-  )),
-  "font-weight": (
-    responsive: true,
-    property: font-weight,
-    class: fw,
-    values: (
-      lighter: $font-weight-lighter,
-      light: $font-weight-light,
-      normal: $font-weight-normal,
-      medium: $font-weight-medium,
-      semibold: $font-weight-semibold,
-      bold: $font-weight-bold,
-      bolder: $font-weight-bolder
-  )),
-  "font-family": (
-    property: font-family,
-    class: font,
-    values: (
-      monospace: var(--#{$prefix}font-monospace),
-      times: $font-family-times,
-      helvetica: $font-family-helvetica,
-    )
-  ),
-  "grid-row": (
-    responsive: true,
-    property: grid-row,
-    class: g-row,
-    values: (
-      start-1-end-2: grid-value(1, 2),
-      start-1-end-3: grid-value(1, 3),
-      start-2-end-3: grid-value(2, 3),
-      start-3-end-4: grid-value(3, 4),
-      2: 2,
-  )),
-  "grid-column": (
-    responsive: true,
-    property: grid-column,
-    class: g-col,
-    values: (
-      start-1-end-2: grid-value(1, 2),
-      start-2-end-3: grid-value(2, 3),
-      start-1-end-3: grid-value(1, 3),  // for 滿版
-      // 6: span 6,
-      12: span 12,
-  )),
-  "grid-column-start": (
-    responsive: true,
-    property: grid-column-start,
-    class: g-start,
-    values: (
-      1: 1,
-      7: 7,
-  )),
-  "grid-template-columns": (
-    property: grid-template-columns,
-    class: gt-col,
-    values: (1fr: 1fr 1fr)
-  ),
-  "grid-template-rows": (
-    responsive: true,
-    property: grid-template-rows,
-    class: gt-row,
-    values: (auto: auto 1fr)
-  ),
-
+$utilities: map-merge(
+  $utilities,
+  (
+    // Modify values
+    "width": map-merge(
+      map-get($utilities, "width"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "width"), "values"),
+          (33: 33.3333333333% )  
+        ),
+      ),
+    ),
+    "max-width": map-merge(
+      map-get($utilities, "max-width"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "max-width"), "values"),
+          (none: none),
+        ),
+      ),
+    ),
+    "font-family": map-merge(
+      map-get($utilities, "font-family"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "font-family"), "values"),
+          (
+            times: $font-family-times,
+            helvetica: $font-family-helvetica,
+            pingfang: $font-family-PingFang,
+          ),
+        ),
+      ),
+    ),
+    // Make an existing utility responsive
+    "font-weight": map-merge(
+      map-get($utilities, "font-weight"),
+      ( responsive: true ),
+    ),
+    "border-bottom": map-merge(
+      map-get($utilities, "border-bottom"),
+      ( responsive: true ),
+    ),
+    "color": map-merge(
+      map-get($utilities, "color"),
+      ( responsive: true ),
+    ),
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      ( responsive: true ),
+    ),
+    // Add new utilities
+    "grid-row": (
+      responsive: true,
+      property: grid-row,
+      class: g-row,
+      values: (
+        start-1-end-2: grid-value(1, 2),
+        start-1-end-3: grid-value(1, 3),
+        start-2-end-3: grid-value(2, 3),
+        start-3-end-4: grid-value(3, 4),
+        2: 2,
+    )),
+    "grid-column": (
+      responsive: true,
+      property: grid-column,
+      class: g-col,
+      values: (
+        start-1-end-2: grid-value(1, 2),
+        start-2-end-3: grid-value(2, 3),
+        start-1-end-3: grid-value(1, 3),  // for 滿版
+        12: span 12,
+    )),
+    "grid-column-start": (
+      responsive: true,
+      property: grid-column-start,
+      class: g-start,
+      values: (
+        1: 1,
+        7: 7,
+    )),
+    "grid-template-columns": (
+      property: grid-template-columns,
+      class: gt-col,
+      values: (1fr: 1fr 1fr)
+    ),
+    "grid-template-rows": (
+      property: grid-template-rows,
+      class: gt-row,
+      values: (auto: auto 1fr)
+    ),
+  )
 );
-// grid-template-columns: 1fr 1fr;
-//   grid-template-rows: auto 1fr;
