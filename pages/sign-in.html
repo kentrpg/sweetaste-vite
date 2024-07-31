@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <title>登入</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+    <main class="pt-13 pb-0 pb-sm-13 mx-n8 mx-sm-0">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10 d-flex flex-wrap">
+            <div class="w-100 d-grid gt-col-1fr gt-row-auto gap-0">
+              <div class="g-col-start-1-end-3 g-col-md-start-1-end-2 g-row-start-1-end-2">
+                <h1 class="text-center bg-primary py-8 py-sm-10">會員登入</h1>
+              </div>
+              <div class="g-col-start-1-end-3 g-col-md-start-2-end-3 g-row-start-2-end-3 g-row-md-start-1-end-3 bg-secondary py-8 py-sm-10 my-lg-l px-8">
+                <h2 class="d-none d-sm-block text-center fw-normal fw-md-light lh-lg text-light mb-9"><span class="d-none d-lg-inline">—— </span>連結社群帳號<span class="d-none d-lg-inline"> ——</span></h2>
+                <div class="btn-group d-flex flex-sm-column" role="group" aria-label="連結社群帳號">
+                  <button class="btn btn-sm btn-white flex-grow-1 flex-sm-grow-0 lh-1 fs-1 mb-sm-4">
+                    <img class="mw-100 mw-sm-none" src="/assets/images/logo-facebook-lg.svg" width="108px" height="20px" alt="facebook logo">
+                  </button>
+                  <button class="btn btn-white flex-grow-1 flex-sm-grow-0 lh-1 fs-1 py-3 mb-sm-4">
+                    <img class="mw-100 mw-sm-none" src="/assets/images/logo-google-lg.svg" width="95px" height="30px" alt="google logo">
+                  </button>
+                  <button class="btn btn-white flex-grow-1 flex-sm-grow-0 lh-1 fs-1 py-l">
+                    <img class="mw-100 mw-sm-none" src="/assets/images/logo-yahoo-lg.svg" width="97px" height="23px" alt="yahoo logo">
+                  </button>
+                </div>
+              </div>
+              <form action="sign-in.html" class="g-col-start-1-end-3 g-col-md-start-1-end-2 g-row-start-3-end-4 g-row-md-start-2-end-3">
+                <div class="bg-primary p-8 pt-md-0 pb-sm-6">
+                  <div class="input-group mb-4">
+                    <span class="input-group-text pe-0">
+                      <i class="material-icons">person</i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="電子信箱/手機號碼"  aria-label="帳號" aria-describedby="輸入帳號可以是電子信箱或手機號碼">
+                  </div>
+                  <div class="input-group mb-m">
+                    <span class="input-group-text pe-0">
+                      <i class="material-icons">vpn_key</i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="請輸入使用者密碼"  aria-label="密碼" aria-describedby="輸入密碼">
+                  </div>
+                  <div class="form-check lh-sm">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      記住我
+                    </label>
+                  </div>
+                </div>
+                <button class="btn btn-info w-100 text-primary" type="submit">登入帳號</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
