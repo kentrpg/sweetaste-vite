@@ -6,12 +6,24 @@ $utilities: map-merge(
   $utilities,
   (
     // Modify utilities values
+    "height": map-merge(
+      map-get($utilities, "height"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "height"), "values"),
+          (banner: 496px),  
+        ),
+      ),
+    ),
     "width": map-merge(
       map-get($utilities, "width"),
       (
         values: map-merge(
           map-get(map-get($utilities, "width"), "values"),
-          (input-num: 48px),  
+          (
+            input-num: 48px,
+            card-img: 89px,
+          ),  
         ),
       ),
     ),
@@ -50,6 +62,15 @@ $utilities: map-merge(
         ),
       ),
     ),
+    "line-height": map-merge(
+      map-get($utilities, "line-height"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "line-height"), "values"),
+          (l: 1.4),
+        ),
+      ),
+    ),
     // Make an existing utility responsive
     "font-weight": map-merge(
       map-get($utilities, "font-weight"),
@@ -68,6 +89,13 @@ $utilities: map-merge(
       ( responsive: true ),
     ),
     // Add new utilities
+    "writing-mode": (
+      property: writing-mode,
+      class: wm,
+      values: (
+        vertical-lr: vertical-lr,
+      ),
+    ),
     "border-x": (
       property: border-left border-right,
       class: border,

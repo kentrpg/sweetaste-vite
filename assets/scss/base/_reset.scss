@@ -7,7 +7,7 @@ a {
   text-decoration: none;
 }
 
-img:not([width]) {
+img:not([height]) {
   vertical-align: middle;
   max-width: 100%;
   height: auto;
@@ -27,14 +27,7 @@ h2 {
   color: $light;
 }
 
-.list-group-item {
-  display: flex;
-  justify-content: space-between;
-  color: $primary;
-}
-
 // overrides _reboot.scss
-
 ol,
 ul {
   padding-left: 0;
@@ -52,4 +45,21 @@ address {
 
 p {
   margin-bottom: 0;
+}
+
+//base
+.wm-vertical-lr {
+  font-size: 16px;
+  color: $secondary;
+  letter-spacing: 5px;
+  cursor: default;
+  padding: 10px;
+}
+
+.text-hide {
+  font: 0 / 0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }
