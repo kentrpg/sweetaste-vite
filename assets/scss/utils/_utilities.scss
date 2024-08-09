@@ -6,94 +6,204 @@ $utilities: map-merge(
   $utilities,
   (
     // Modify utilities values
-    "height": map-merge(
-      map-get($utilities, "height"),
-      (
-        values: map-merge(
-          map-get(map-get($utilities, "height"), "values"),
-          (banner: 496px),  
-        ),
+    "height":
+      map-merge(
+        map-get($utilities, "height"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "height"), "values"),
+              (
+                banner: 496px,
+                banner-sm: 277px,
+                banner-rectangle: 256px,
+                banner-rectangle-sm: 180px,
+              )
+            ),
+        )
       ),
-    ),
-    "width": map-merge(
-      map-get($utilities, "width"),
-      (
-        values: map-merge(
-          map-get(map-get($utilities, "width"), "values"),
-          (
-            input-num: 48px,
-            card-img: 89px,
-          ),  
-        ),
+    "width":
+      map-merge(
+        map-get($utilities, "width"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "width"), "values"),
+              (
+                input-num: 48px,
+                card-img: 89px,
+              )
+            ),
+        )
       ),
-    ),
-    "max-width": map-merge(
-      map-get($utilities, "max-width"),
-      (
-        responsive: true,
-        values: map-merge(
-          map-get(map-get($utilities, "max-width"), "values"),
-          (
-            none: none,
-            shop-car: 110px,
-          ),
-        ),
+    "max-height":
+      map-merge(
+        map-get($utilities, "max-height"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "max-height"), "values"),
+              (
+                none: none,
+                desc: 460px,  // for index.html 為什麼區塊的高度
+              )
+            ),
+        )
       ),
-    ),
-    "font-family": map-merge(
-      map-get($utilities, "font-family"),
-      (
-        values: map-merge(
-          map-get(map-get($utilities, "font-family"), "values"),
-          (
-            times: $font-family-times,
-            helvetica: $font-family-helvetica,
-            pingfang: $font-family-PingFang,
-          ),
-        ),
+    "max-width":
+      map-merge(
+        map-get($utilities, "max-width"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "max-width"), "values"),
+              (
+                none: none,
+                shop-car: 110px,
+              )
+            ),
+        )
       ),
-    ),
-    "flex": map-merge(
-      map-get($utilities, "flex"),
-      (
-        values: map-merge(
-          map-get(map-get($utilities, "flex"), "values"),
-          (none: none),
-        ),
+    "font-family":
+      map-merge(
+        map-get($utilities, "font-family"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "font-family"), "values"),
+              (
+                times: $font-family-times,
+                helvetica: $font-family-helvetica,
+                pingfang: $font-family-PingFang,
+              )
+            ),
+        )
       ),
-    ),
-    "line-height": map-merge(
-      map-get($utilities, "line-height"),
-      (
-        values: map-merge(
-          map-get(map-get($utilities, "line-height"), "values"),
-          (l: 1.4),
-        ),
+    "flex":
+      map-merge(
+        map-get($utilities, "flex"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "flex"), "values"),
+              (
+                none: none,
+                expand: 1 0 0,
+              )
+            ),
+        )
       ),
-    ),
+    "line-height":
+      map-merge(
+        map-get($utilities, "line-height"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "line-height"), "values"),
+              (
+                l: 1.4,
+                2: 2,
+                25: 2.5,
+              )
+            ),
+        )
+      ),
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "background-color"), "values"),
+              (
+                rectangle-over: rgba($primary, 0.8)
+              )
+            ),
+        )
+      ),  
     // Make an existing utility responsive
-    "font-weight": map-merge(
-      map-get($utilities, "font-weight"),
-      ( responsive: true ),
-    ),
-    "border-bottom": map-merge(
-      map-get($utilities, "border-bottom"),
-      ( responsive: true ),
-    ),
-    "color": map-merge(
-      map-get($utilities, "color"),
-      ( responsive: true ),
-    ),
-    "background-color": map-merge(
-      map-get($utilities, "background-color"),
-      ( responsive: true ),
-    ),
+    "top":
+      map-merge(
+        map-get($utilities, "top"),
+        (
+          responsive: true,
+        )
+      ),
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true,
+        )
+      ),
+    "font-weight":
+      map-merge(
+        map-get($utilities, "font-weight"),
+        (
+          responsive: true,
+        )
+      ),
+    "border-bottom":
+      map-merge(
+        map-get($utilities, "border-bottom"),
+        (
+          responsive: true,
+        )
+      ),
+    "color":
+      map-merge(
+        map-get($utilities, "color"),
+        (
+          responsive: true,
+        )
+      ),
     // Add new utilities
+    "background-image": (
+      property: background,
+      class: bg,
+      values: (
+        banner: url(/assets/images/banner.jpg) no-repeat center center / cover,
+        rectangle-1: url(/assets/images/banner-pic1.jpg) no-repeat center center / cover,
+        rectangle-2: url(/assets/images/banner-pic2.jpg) no-repeat center center / cover,
+        rectangle-3: url(/assets/images/banner-pic3.jpg) no-repeat center center / cover
+      ),
+    ),
+    "position-shorthand": (
+      property: top right bottom left,
+      class: position,
+      values: ( 
+        rectangle: -10px,
+        init: 0
+      )
+    ),
+    "filter": (    // for index.html banner rectangle
+      property: filter,
+      class: filter,
+      values: (
+        blur: blur(5px),
+      ),
+    ),
     "writing-mode": (
+      responsive: true,
       property: writing-mode,
       class: wm,
       values: (
-        vertical-lr: vertical-lr,
+        v-lr: vertical-lr,
+        v-rl: vertical-rl,
+      ),
+    ),
+    "letter-spacing": (
+      property: letter-spacing,
+      class: ls,
+      values: (
+        0: 0,
+        sm: 5px,
+        lg: 8px
       ),
     ),
     "border-x": (
@@ -101,7 +211,7 @@ $utilities: map-merge(
       class: border,
       values: (
         x: 1px solid $border-color,
-      )
+      ),
     ),
     "border-y": (
       responsive: true,
@@ -110,7 +220,7 @@ $utilities: map-merge(
       values: (
         y: 1px solid $border-color,
         0: 0,
-      )
+      ),
     ),
     "flex-basis": (
       responsive: true,
@@ -119,7 +229,7 @@ $utilities: map-merge(
       values: (
         100: 100%,
         auto: auto,
-      )
+      ),
     ),
     "grid-row": (
       responsive: true,
@@ -131,7 +241,8 @@ $utilities: map-merge(
         start-2-end-3: grid-value(2, 3),
         start-3-end-4: grid-value(3, 4),
         2: 2,
-    )),
+      ),
+    ),
     "grid-column": (
       responsive: true,
       property: grid-column,
@@ -139,26 +250,54 @@ $utilities: map-merge(
       values: (
         start-1-end-2: grid-value(1, 2),
         start-2-end-3: grid-value(2, 3),
-        start-1-end-3: grid-value(1, 3),  // for 滿版
+        start-1-end-3: grid-value(1, 3),
+        start-2-end-4: grid-value(2, 4),
+        start-3-end-4: grid-value(3, 4),
+        start-1-end-4: grid-value(1, 4),
+        // for 滿版
         12: span 12,
-    )),
-    "grid-column-start": (
-      responsive: true,
-      property: grid-column-start,
-      class: g-start,
-      values: (
-        1: 1,
-        7: 7,
-    )),
+      ),
+    ),
     "grid-template-columns": (
       property: grid-template-columns,
       class: gt-col,
-      values: (1fr: 1fr 1fr)
+      values: (
+        1fr: 1fr 1fr,
+        3fr: 3fr 2fr 1fr,
+        3fr-reverse: 2fr 1fr 3fr,
+      ),
     ),
     "grid-template-rows": (
       property: grid-template-rows,
       class: gt-row,
-      values: (auto: auto 1fr)
+      values: (
+        auto: auto 1fr,
+      ),
+    ),
+    // Modify CSS class
+    "position-shorthand-init": (
+      property: position,
+      class: position,
+      values: ( 
+        init: absolute
+      )
+    ),
+    "position-top": (
+      responsive: true,
+      property: top,
+      class: top,
+      values: ( 
+        20: 20px,
+        90: 90px
+      )
+    ),
+    "position-bottom": (
+      responsive: true,
+      property: bottom,
+      class: bottom,
+      values: ( 
+        20: 20px,
+      )
     ),
     // Modify CSS custom properties
     "list-group": (
@@ -166,7 +305,7 @@ $utilities: map-merge(
       class: list-group,
       values: (
         "flush": 0,
-      )
+      ),
     ),
   )
 );
