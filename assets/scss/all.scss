@@ -35,6 +35,7 @@
 @import "bootstrap/scss/button-group";
 @import "bootstrap/scss/forms";
 @import "bootstrap/scss/images";
+@import "bootstrap/scss/progress";
 @import "bootstrap/scss/list-group";
 @import "bootstrap/scss/navbar";
 @import "bootstrap/scss/nav";
@@ -46,12 +47,5 @@
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "bootstrap/scss/utilities/api";
 
-// @import "bootstrap/scss/bootstrap";
-
 // 8. Add additional custom code here
 @import "base/reset";
-// @import './layout/header.scss';
-// @import './layout/footer.scss';
-
-
-// @import './pages/index.scss';

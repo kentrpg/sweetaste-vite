@@ -6,6 +6,46 @@ $utilities: map-merge(
   $utilities,
   (
     // Modify utilities values
+    "start":
+      map-merge(
+        map-get($utilities, "start"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "start"), "values"),
+              (
+                20: 20px,
+              )
+            ),
+        )
+      ),
+    "end":
+      map-merge(
+        map-get($utilities, "end"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "end"), "values"),
+              (
+                20: 20px,
+              )
+            ),
+        )
+      ),
+    "top":
+      map-merge(
+        map-get($utilities, "top"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "top"), "values"),
+              (
+                16: 16px,
+              )
+            ),
+        )
+      ),
     "height":
       map-merge(
         map-get($utilities, "height"),
@@ -19,6 +59,10 @@ $utilities: map-merge(
                 banner-sm: 277px,
                 banner-rectangle: 256px,
                 banner-rectangle-sm: 180px,
+                social-media: 56px,
+                // for sign-in.html social-media images
+                checkout-sm: 460px,
+                checkout: 518px,
               )
             ),
         )
@@ -27,12 +71,14 @@ $utilities: map-merge(
       map-merge(
         map-get($utilities, "width"),
         (
+          responsive: true,
           values:
             map-merge(
               map-get(map-get($utilities, "width"), "values"),
               (
                 input-num: 48px,
-                card-img: 89px,
+                checkout: 300px,
+                max-content: max-content,
               )
             ),
         )
@@ -47,7 +93,8 @@ $utilities: map-merge(
               map-get(map-get($utilities, "max-height"), "values"),
               (
                 none: none,
-                desc: 460px,  // for index.html 為什麼區塊的高度
+                desc: 460px,
+                // for index.html 為什麼區塊的高度
               )
             ),
         )
@@ -96,6 +143,32 @@ $utilities: map-merge(
             ),
         )
       ),
+    "flex-grow":
+      map-merge(
+        map-get($utilities, "flex-grow"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "flex-grow"), "values"),
+              (
+                grow-2: 2,
+              )
+            ),
+        )
+      ),
+    "align-items":
+      map-merge(
+        map-get($utilities, "align-items"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "align-items"), "values"),
+              (
+                normal: normal,
+              )
+            ),
+        )
+      ),
     "line-height":
       map-merge(
         map-get($utilities, "line-height"),
@@ -121,15 +194,15 @@ $utilities: map-merge(
             map-merge(
               map-get(map-get($utilities, "background-color"), "values"),
               (
-                rectangle-over: rgba($primary, 0.8)
+                rectangle-over: rgba($primary, 0.8),
               )
             ),
         )
-      ),  
+      ),
     // Make an existing utility responsive
-    "top":
+    "position":
       map-merge(
-        map-get($utilities, "top"),
+        map-get($utilities, "position"),
         (
           responsive: true,
         )
@@ -163,30 +236,38 @@ $utilities: map-merge(
         )
       ),
     // Add new utilities
-    "background-image": (
-      property: background,
-      class: bg,
-      values: (
-        banner: url(/assets/images/banner.jpg) no-repeat center center / cover,
-        rectangle-1: url(/assets/images/banner-pic1.jpg) no-repeat center center / cover,
-        rectangle-2: url(/assets/images/banner-pic2.jpg) no-repeat center center / cover,
-        rectangle-3: url(/assets/images/banner-pic3.jpg) no-repeat center center / cover
+    "background-image":
+      (
+        property: background,
+        class: bg,
+        values: (
+          banner: url(/assets/images/banner.jpg) no-repeat center center / cover,
+          rectangle-1: url(/assets/images/banner-pic1.jpg) no-repeat center
+            center / cover,
+          rectangle-2: url(/assets/images/banner-pic2.jpg) no-repeat center
+            center / cover,
+          rectangle-3: url(/assets/images/banner-pic3.jpg) no-repeat center
+            center / cover,
+          checkout: url(/assets/images/q5-checkout.svg) no-repeat center center /
+            cover,
+        ),
       ),
-    ),
     "position-shorthand": (
+      responsive: true,
       property: top right bottom left,
       class: position,
-      values: ( 
+      values: (
         rectangle: -10px,
-        init: 0
-      )
+        init: 0,
+      ),
     ),
-    "filter": (    // for index.html banner rectangle
+    "filter": (
+      // for index.html banner rectangle
       property: filter,
       class: filter,
       values: (
         blur: blur(5px),
-      ),
+      )
     ),
     "writing-mode": (
       responsive: true,
@@ -203,7 +284,7 @@ $utilities: map-merge(
       values: (
         0: 0,
         sm: 5px,
-        lg: 8px
+        lg: 8px,
       ),
     ),
     "border-x": (
@@ -227,6 +308,8 @@ $utilities: map-merge(
       property: flex-basis,
       class: flex-basis,
       values: (
+        42: 42.33333%,
+        50: 50%,
         100: 100%,
         auto: auto,
       ),
@@ -275,37 +358,55 @@ $utilities: map-merge(
       ),
     ),
     // Modify CSS class
-    "position-shorthand-init": (
-      property: position,
-      class: position,
-      values: ( 
-        init: absolute
-      )
-    ),
+    "position-shorthand-init":
+      (
+        responsive: true,
+        property: position,
+        class: position,
+        values: (
+          init: absolute,
+        ),
+      ),
     "position-top": (
       responsive: true,
       property: top,
       class: top,
-      values: ( 
+      values: (
         20: 20px,
-        90: 90px
-      )
+        90: 90px,
+      ),
     ),
     "position-bottom": (
       responsive: true,
       property: bottom,
       class: bottom,
-      values: ( 
+      values: (
         20: 20px,
-      )
+      ),
+    ),
+    "form-label": (
+      property: line-height,
+      class: form,
+      values: (
+        label: 1.4,
+      ),
     ),
     // Modify CSS custom properties
+    "ratio":
+      (
+        responsive: true,
+        property: --#{$prefix}aspect-ratio,
+        class: ratio,
+        values: (
+          3x2: 66.6666666667%,
+        ),
+      ),
     "list-group": (
       property: --#{$prefix}list-group-border-width,
       class: list-group,
       values: (
         "flush": 0,
       ),
-    ),
+    )
   )
 );

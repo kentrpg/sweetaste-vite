@@ -7,6 +7,7 @@ a {
   text-decoration: none;
 }
 
+// 排除屬性有設置 height 的 img，避免吃到 auto 導致 height 出現小數點
 img:not([height]) {
   vertical-align: middle;
   max-width: 100%;
@@ -19,6 +20,7 @@ picture {
 
 h1 {
   text-align: center;
+  font-weight: 600;
 }
 
 h2 {
@@ -64,4 +66,40 @@ p {
   text-shadow: none;
   background-color: transparent;
   border: 0;
+}
+
+/* for checkout timeline
+補狀態的陳述方式
+- 預設實心：添加 material-symbols-outlined
+- 當前內層實心圓：
+  - 透過修改 btn-bg 顏色來產生與 ::after 之間的間距
+  - ::after 設置內層實心圓
+- 往後的元素設置為空心圓：修改 bg、border-color 顏色
+  - 使用同層全體選擇器來選擇元素
+*/
+
+.btn-sm {
+  --#{$prefix}btn-border-width: 1px;
+  &:not(.progress-active) {  // 為了 icon 位置不受 padding 影響，使其起始位置為 button 的中心
+    padding: 0;
+  }
+  &.progress-active {
+    --#{$prefix}btn-bg: var(--#{$prefix}primary);
+  }
+}
+.progress-active ~ .btn-sm {
+  --#{$prefix}btn-border-color: var(--#{$prefix}light);
+  --#{$prefix}btn-bg: var(--#{$prefix}primary);
+}
+
+.progress-active::after {
+  content: "";
+  height: 14px;
+  display: block;
+  border-radius: 20px;
+  background-color: $secondary;
+}
+
+.nav-tabs .nav-link {  // for checkout-receipt.html nav-tabs
+  color: $secondary;
 }
