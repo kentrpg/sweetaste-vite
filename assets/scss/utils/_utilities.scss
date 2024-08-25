@@ -383,15 +383,14 @@ $utilities: map-merge(
           init: absolute,
         ),
       ),
-    "position-horizontal-init":
-      (
-        responsive: true,
-        property: position,
-        class: hposition,
-        values: (
-          init: absolute,
-        ),
+    "position-horizontal-init": (
+      responsive: true,
+      property: position,
+      class: hposition,
+      values: (
+        init: absolute,
       ),
+    ),
     "position-top": (
       responsive: true,
       property: top,
@@ -426,11 +425,18 @@ $utilities: map-merge(
           3x2: 66.6666666667%,
         ),
       ),
-    "list-group": (
+    "list-group-border-width": (
       property: --#{$prefix}list-group-border-width,
       class: list-group,
       values: (
         "flush": 0,
+      ),
+    ),
+    "list-group-color": (
+      property: --#{$prefix}list-group-color,
+      class: list-group,
+      values: (
+        "flush": $secondary,
       ),
     )
   )
