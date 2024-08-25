@@ -269,6 +269,14 @@ $utilities: map-merge(
         init: 0,
       ),
     ),
+    "position-horizontal-shorthand": (
+      responsive: true,
+      property: right left,
+      class: hposition,
+      values: (
+        init: 0,
+      ),
+    ),
     "filter": (
       // for index.html banner rectangle
       property: filter,
@@ -366,11 +374,20 @@ $utilities: map-merge(
       ),
     ),
     // Modify CSS class
-    "position-shorthand-init":
+    "position-init":
       (
         responsive: true,
         property: position,
         class: position,
+        values: (
+          init: absolute,
+        ),
+      ),
+    "position-horizontal-init":
+      (
+        responsive: true,
+        property: position,
+        class: hposition,
         values: (
           init: absolute,
         ),
