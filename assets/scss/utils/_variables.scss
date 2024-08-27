@@ -110,6 +110,9 @@ $navbar-nav-link-padding-x:         1.875rem;
 $navbar-toggler-padding-y:          .375rem;
 $navbar-toggler-padding-x:          .5rem;
 $navbar-brand-margin-end:           0;
+
+$navbar-toggler-focus-width:        0;
+
 $navbar-light-color:                $primary;
 $navbar-light-hover-color:          rgba($primary, .8);
 $navbar-light-active-color:         rgba($primary, .8);
@@ -188,6 +191,14 @@ $list-group-hover-bg:               $secondary;
 $pagination-border-radius:          0;
 $pagination-padding-y:              1.0625rem;
 $pagination-padding-x:              1.5156rem;
+
+$pagination-focus-color:            $secondary;
+$pagination-focus-bg:               $primary; 
+$pagination-focus-box-shadow:       none;
+
+$pagination-active-color:           $secondary;
+$pagination-active-bg:              $primary;
+$pagination-active-border-color:    $primary;
 
 // Cards
 $card-border-radius:                0;
