@@ -196,6 +196,7 @@ $utilities: map-merge(
               map-get(map-get($utilities, "background-color"), "values"),
               (
                 rectangle-over: rgba($primary, 0.8),
+                rectangle-over-active: rgba($info, 0.8),
               )
             ),
         )

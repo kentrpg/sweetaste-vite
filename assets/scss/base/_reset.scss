@@ -29,6 +29,18 @@ h2 {
   color: $light;
 }
 
+// cursor override
+h1, h2, h3, h4, h5, h6, div, span, p {
+  cursor: default;
+}
+
+a, label, button, select, textarea {
+  cursor: pointer;
+  & * {
+    cursor: pointer;
+  }
+}
+
 // overrides _reboot.scss
 ol,
 ul {
@@ -50,14 +62,9 @@ p {
 }
 
 // for vertical text
-.wm-v {
-  &-lr, &-rl {
-    cursor: default;
-  }
-  &-lr {
-    padding: 10px;
-    white-space: nowrap; // for index.html banner bottom content
-  }
+.wm-v-lr {
+  padding: 10px;
+  white-space: nowrap; // for index.html banner bottom content
 }
 
 .text-hide {
