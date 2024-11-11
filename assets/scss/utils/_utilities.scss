@@ -428,29 +428,24 @@ $utilities: map-merge(
         label: 1.4,
       ),
     ),
-    // Modify CSS custom properties
+    // CSS variable utilities
     "ratio":
       (
         responsive: true,
-        property: --#{$prefix}aspect-ratio,
+        css-var: true,
+        css-variable-name: aspect-ratio,
         class: ratio,
         values: (
           3x2: 66.6666666667%,
         ),
       ),
     "list-group-border-width": (
-      property: --#{$prefix}list-group-border-width,
+      css-var: true,
+      css-variable-name: list-group-border-width,
       class: list-group,
       values: (
         "flush": 0,
-      ),
+      )
     ),
-    "list-group-color": (
-      property: --#{$prefix}list-group-color,
-      class: list-group,
-      values: (
-        "flush": $secondary,
-      ),
-    )
   )
 );
